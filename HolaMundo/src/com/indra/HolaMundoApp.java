@@ -3,7 +3,7 @@ package com.indra;
 import java.math.BigDecimal;
 
 public class HolaMundoApp {
-
+	// https://github.com/Saltos-School/javaanalytics
 	public static void main(String[] args) {
 		System.out.println("Hola Mundo");
 		int a = 0;
@@ -32,6 +32,12 @@ public class HolaMundoApp {
 		System.out.println("b1 + b2 = " + suma3);
 		BigDecimal resultado = b1.multiply(b2);
 		System.out.println("b1 x b2 = " + resultado);
+		
+		BigDecimal bi = new BigDecimal("0.1");
+		BigDecimal bj = new BigDecimal("0.2");
+		BigDecimal bk = new BigDecimal("0.3");
+		BigDecimal suma4 = bi.add(bj).add(bk);
+		System.out.println("bi + bj + bk = " + suma4);
 	}
 
 }
