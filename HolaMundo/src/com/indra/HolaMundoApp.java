@@ -2,6 +2,8 @@ package com.indra;
 
 import java.math.BigDecimal;
 
+import com.indra.util.MasOperaciones;
+
 public class HolaMundoApp {
 	// https://github.com/Saltos-School/javaanalytics
 	public static void main(String[] args) {
@@ -36,8 +38,24 @@ public class HolaMundoApp {
 		BigDecimal bi = new BigDecimal("0.1");
 		BigDecimal bj = new BigDecimal("0.2");
 		BigDecimal bk = new BigDecimal("0.3");
-		BigDecimal suma4 = bi.add(bj).add(bk);
+		BigDecimal suma4 = sumar(bi, bj, bk);
 		System.out.println("bi + bj + bk = " + suma4);
+		
+		BigDecimal mult = Operaciones.multiplicar(bi, bj, bk);
+		System.out.println("bi * bj * bk = " + mult);
+		
+		// MasOperaciones op = new MasOperaciones();
+		BigDecimal div = MasOperaciones.division(bi, bj, bk);
+		if (div == null) {
+			System.out.println("No se puede dividir");
+		} else {
+			System.out.println("bi / bj / bk = " + div);
+		}
+	}
+	
+	private static BigDecimal sumar(BigDecimal b1, BigDecimal b2, BigDecimal b3) {
+		BigDecimal suma = b1.add(b2).add(b3);
+		return suma;
 	}
 
 }
