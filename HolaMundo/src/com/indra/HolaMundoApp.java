@@ -45,7 +45,7 @@ public class HolaMundoApp {
 		System.out.println("bi * bj * bk = " + mult);
 		
 		// MasOperaciones op = new MasOperaciones();
-		BigDecimal div = MasOperaciones.division(bi, bj, bk);
+		BigDecimal div = Operaciones.prueba(bi, bj, bk);
 		if (div == null) {
 			System.out.println("No se puede dividir");
 		} else {
