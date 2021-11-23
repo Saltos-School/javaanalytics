@@ -32,12 +32,47 @@ public class Colecciones {
 		List<Integer> l = Arrays.asList(5, 7, -3);
 		
 		List<Integer> l2 = new ArrayList<>();
-		l.add(5);
-		l.add(7);
-		l.add(-3);
+		l2.add(5);
+		l2.add(7);
+		l2.add(-3);
+				
+		System.out.println("b = " + b);
+		System.out.println("oi = " + oi);
+		System.out.println("v = " + v);
+		System.out.println("l2 = " + l2);
+		System.out.println("s1 = " + openStream());
 		
-		Stream<Integer> s1 = Stream.of(1, 5, -7, 3, 9);
+		System.out.println("v =");
+		for (int j = 0; j < v.length; j++) {
+			System.out.println(v[j]);
+		}
+		
+		System.out.println("l = ");
+		for (int k = 0; k < l.size(); k++) {
+			System.out.println(l.get(k));
+		}
+		
+		System.out.println("l2 = ");
+		for (Integer x: l2) {
+			System.out.println(x);
+		}
+		
+		System.out.println("l2 = ");
+		l2.forEach(x -> System.out.println("@" + x));
+		
+		System.out.println("l2 = ");
+		l2.forEach(System.out::println);
+		
+		System.out.println("s1 = ");
+		openStream().forEach(System.out::println);
+		
+		System.out.println("s1 = ");
+		openStream().forEach(s -> System.out.println("@" + s));
 
+	}
+
+	private static Stream<Integer> openStream() {
+		return Stream.of(1, 5, -7, 3, 9);
 	}
 
 }
