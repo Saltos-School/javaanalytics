@@ -1,6 +1,7 @@
 package com.indra;
 
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public class OptionalMonad {
 
@@ -32,8 +33,19 @@ public class OptionalMonad {
 		System.out.println("c3: " + c3);
 		System.out.println("c4: " + c4);
 		
-		o1.ifPresent(c5 -> System.out.println("c1: " + c5));
-		o2.ifPresent(c6 -> System.out.println("c6: " + c6));
+		// EJERCICIO sacar el consumer de c5 como un lambda
+		Consumer<String> consumer5 = c5 -> System.out.println("c1: " + c5);
+		
+		// EJERCICIO sacar el consumer de c6 como un anonymous class
+		Consumer<String> consumer6 = new Consumer<String>() {
+			@Override
+			public void accept(String c6) {
+				System.out.println("c6: " + c6);
+			}
+		};
+		
+		o1.ifPresent(consumer5);
+		o2.ifPresent(consumer6);
 		
 		o2.ifPresentOrElse(
 				c7 -> System.out.println("c7: " + c7),
