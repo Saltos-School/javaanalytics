@@ -31,6 +31,10 @@ public class Lambdas {
 		
 		Thread t3 = new Thread(() -> System.out.println("Lambda en: " + Thread.currentThread().getName()));
 		t3.start();
+		
+		Runnable p2 = () -> System.out.println("Lambda en: " + Thread.currentThread().getName());
+		Thread t4 = new Thread(p2);
+		t4.start();
 	}
 
 }
