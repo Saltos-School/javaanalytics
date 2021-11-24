@@ -27,8 +27,8 @@ public class MoreStreams {
 				MinMax.empty(),
 				MinMax::ganador,
 				MinMax::ganador);
-		r.ifPresent(minMax -> System.out.println("min: " + minMax.getMin()));
-		r.ifPresent(minMax -> System.out.println("max: " + minMax.getMax()));
+		
+		System.out.println("Resultado: " + r);
 	}
 
 }
