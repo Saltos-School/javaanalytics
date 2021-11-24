@@ -54,7 +54,18 @@ public class MapReduce {
 				() -> System.out.println("No hay minimo porque no hay elementos"));
 		
 		System.out.println("La suma (reduce)");
-		abrirStream().limit(20).reduce(0, (acc,  i) -> acc + i, (i, j) -> i + j);
+		int suma2 = abrirStream().limit(20).reduce(0, (acc,  i) -> acc + i, (i, j) -> i + j);
+		System.out.println(suma2);
+		
+		System.out.println("La suma (operaciones)");
+		String suma3 = abrirStream()
+				.limit(4)
+				.parallel()
+				.reduce(
+						"0", 
+						(acc, i) -> "(" + acc + " + " + i + ")", 
+						(i, j) -> "[" + i + " ++ " + j + "]");
+		System.out.println(suma3);
 	}
 
 	private static Stream<Integer> abrirStream() {
