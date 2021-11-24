@@ -59,7 +59,7 @@ public class MapReduce {
 		
 		System.out.println("La suma (operaciones)");
 		String suma3 = abrirStream()
-				.limit(4)
+				.limit(10)
 				.parallel()
 				.reduce(
 						"0", 
